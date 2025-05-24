@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Love you Nazlıcannn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #1a237e;
+      font-family: 'Press Start 2P', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+      position: relative;
+    }
+
+    .emoji-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      animation: floatEmoji linear infinite;
+      opacity: 0.6;
+      filter: blur(0.5px);
+    }
+
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .scene {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: rgba(26, 35, 126, 0.3);
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      animation: twinkle 4s infinite;
+    }
+
+    .mountains {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 300px;
+      background: 
+        linear-gradient(45deg, #2E7D32 0%, #1B5E20 50%, #004D40 100%),
+        linear-gradient(-45deg, #2E7D32 0%, #1B5E20 50%, #004D40 100%);
+      clip-path: polygon(
+        0% 100%, 10% 70%, 20% 85%, 30% 60%, 40% 80%, 
+        50% 50%, 60% 75%, 70% 55%, 80% 85%, 90% 65%, 100% 100%
+      );
+    }
+
+    .snow-caps {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.8) 50%, transparent 100%);
+      clip-path: polygon(
+        0% 100%, 10% 70%, 20% 85%, 30% 60%, 40% 80%, 
+        50% 50%, 60% 75%, 70% 55%, 80% 85%, 90% 65%, 100% 100%
+      );
+      filter: blur(2px);
+    }
+
+    .trees {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: 
+        radial-gradient(circle at 20% 100%, #1B5E20 0%, transparent 50%),
+        radial-gradient(circle at 40% 100%, #2E7D32 0%, transparent 50%),
+        radial-gradient(circle at 60% 100%, #1B5E20 0%, transparent 50%),
+        radial-gradient(circle at 80% 100%, #2E7D32 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50px;
+      width: 120px;
+      height: 50px;
+      animation: moveCloud linear infinite;
+      filter: blur(1px);
+    }
+
+    .cloud:nth-child(1) { top: 20%; animation-duration: 30s; }
+    .cloud:nth-child(2) { top: 40%; animation-duration: 25s; }
+    .cloud:nth-child(3) { top: 60%; animation-duration: 35s; }
+
+    .bird {
+      position: absolute;
+      color: black;
+      font-size: 24px;
+      animation: flyBird linear infinite;
+      transform-origin: center;
+    }
+
+    .flower-bird {
+      position: absolute;
+      font-size: 28px;
+      animation: flyBird linear infinite;
+      filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+      transform-origin: center;
+    }
+
+    .bird:nth-child(1) { top: 30%; animation-duration: 15s; }
+    .bird:nth-child(2) { top: 50%; animation-duration: 18s; }
+    .flower-bird:nth-child(1) { top: 25%; animation-duration: 20s; }
+    .flower-bird:nth-child(2) { top: 45%; animation-duration: 22s; }
+    .flower-bird:nth-child(3) { top: 65%; animation-duration: 19s; }
+
+    @keyframes moveCloud {
+      from { left: -100px; }
+      to { left: 100%; }
+    }
+
+    @keyframes flyBird {
+      0% { 
+        left: -50px;
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+      50% {
+        transform: translateY(0) rotate(0deg);
+      }
+      75% {
+        transform: translateY(20px) rotate(-5deg);
+      }
+      100% { 
+        left: 100%;
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 18px;
+      text-shadow: 2px 2px 4px #000;
+      z-index: 10;
+    }
+
+    .media-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      z-index: 10;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .media-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .heart-button {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin-top: 20px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease;
+      z-index: 10;
+      animation: pulse 2s infinite;
+    }
+
+    .heart-button:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .heart-button:active {
+      transform: scale(0.95);
+    }
+
+    .heart-button::before,
+    .heart-button::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ff69b4;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    }
+
+    .heart-button::before {
+      transform: rotate(45deg);
+    }
+
+    .heart-button::after {
+      transform: rotate(-45deg);
+    }
+
+    .heart-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      z-index: 2;
+      width: 100%;
+    }
+
+    .message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+      z-index: 100;
+      display: none;
+      text-align: center;
+      color: #ff69b4;
+      font-size: 16px;
+      animation: fadeIn 0.5s ease;
+      max-width: 80%;
+      width: 400px;
+    }
+
+    .message img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .message-text {
+      line-height: 1.6;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .confetti {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      font-size: 40px;
+      animation: confetti-fall 3s linear infinite;
+      z-index: 99;
+      user-select: none;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    }
+
+    @keyframes confetti-fall {
+      0% { 
+        transform: translateY(-100vh) rotate(0deg) scale(1.2);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-50vh) rotate(360deg) scale(1);
+      }
+      100% { 
+        transform: translateY(100vh) rotate(720deg) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    @keyframes confetti-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    audio {
+      display: none;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .audio-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .audio-controls button {
+      background: #ff69b4;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .audio-controls button:hover {
+      transform: scale(1.1);
+      background: #ff1493;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="emoji-background" id="emojiBackground"></div>
+  <div class="scene">
+    <div class="stars"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="bird">🐦</div>
+    <div class="bird">🐦</div>
+    <div class="flower-bird">🦜🌹💕🦜🐹🦄🍁🪻🦜🐹🦄🍁🪻💐💛🌸💘🌸🪻🌺🌷🏵️🌿🌹💐💛🌸🪻🦜🐹🦄🍁🪻💐💛🌸💘🌸🪻🌺🌷🏵️🌿🌹💐💛🌸🪻🦜🐹🦄🍁🪻💐💛🌸💘🌸🪻🌺🌷🏵️🌿🌹💐💛🌸🪻🦜🐹🦄🍁🪻💐💛🌸💘🌸🪻🌺🌷🏵️🌿🌹💐💛🌸🪻💐💛🌸💘🌸🪻🌺🌷🏵️🌿🌹💐💛🌸🪻💕🌹🌺</div>
+    <div class="flower-bird">🦜🦜🐹🦄🍁🪻💐💛🌸💘🌸🪻🌺🌷🏵️🌿🌹💐💛🌸🪻🌸</div>
+    <div class="flower-bird">🦜🐹🦄🍁🪻💐💛🌸💘🌸🪻🌺🌷🏵️🌿🌹💐💛🌸🪻🌺🌷🩷🐹💘🪻💓💐🩷🌷💓🌹</div>
+    <div class="mountains"></div>
+    <div class="snow-caps"></div>
+    <div class="trees"></div>
+  </div>
+  
+  <h1>Love you Nazlıcannn 💖</h1>
+  <div class="media-container">
+    <img src="./3f0ba886fc79143794eb5b71db07d885.jpg" alt="Sevimli Resim">
+  </div>
+  
+  <div class="heart-button" onclick="showMessage()">
+    <div class="heart-text">Doğum Günün Kutlu Olsun<br>Askım 💖</div>
+  </div>
+
+  <div class="message" id="birthdayMessage">
+    <img src="./3f0ba886fc79143794eb5b71db07d885.jpg" alt="Özel Resim">
+    <div class="message-text">
+      Çıtırsın gencsin güzelsin<br>
+      Nice mutlu güzel yaşlaraaa<br>
+      Hayatında hep mutluluklar sen bulsun inşşşş <br>
+      İyi ki seni tanıdım da<br>
+      Gözlerinin yeşilinde kayboldum güzelim<br>
+      Kendine iyi bak 💖
+      seni sevıyorumm
+    </div>
+  </div>
+
+  <audio id="bgMusic" preload="auto">
+    <source src="./Konna Netlaka.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="audio-controls">
+    <button onclick="toggleMusic()">🎵 Müziği Başlat/Durdur</button>
+  </div>
+
+  <script>
+    let isPlaying = false;
+    const audio = document.getElementById('bgMusic');
+    audio.volume = 0.7;
+
+    // Mac için otomatik oynatma engelini aşma
+    document.addEventListener('click', function() {
+      if (!isPlaying) {
+        audio.play().catch(function(error) {
+          console.log("Müzik başlatılamadı:", error);
+        });
+      }
+    }, { once: true });
+
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play().catch(function(error) {
+          console.log("Müzik başlatılamadı:", error);
+        });
+      }
+      isPlaying = !isPlaying;
+    }
+
+    function createConfetti() {
+      const flowers = ['🌸', '🌺', '🌹', '🌷', '🌼', '💐', '🌻', '🌞'];
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+        confetti.style.animationDelay = Math.random() * 2 + 's';
+        confetti.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.8})`;
+        document.body.appendChild(confetti);
+      }
+    }
+
+    function showMessage() {
+      const message = document.getElementById('birthdayMessage');
+      message.style.display = 'block';
+      createConfetti();
+      
+      setTimeout(() => {
+        const confettiElements = document.querySelectorAll('.confetti');
+        confettiElements.forEach(el => el.remove());
+      }, 5000);
+    }
+
+    // Emoji arka planı oluştur
+    function createEmojiBackground() {
+      const emojis = ['🦜', '🐹', '🦄', '🍁', '🪻', '💐', '💛', '🌸', '💘', '🌺', '🌷', '🏵️', '🌿', '🌹'];
+      const container = document.getElementById('emojiBackground');
+      
+      for (let i = 0; i < 50; i++) {
+        const emoji = document.createElement('div');
+        emoji.className = 'emoji';
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * 100 + 'vw';
+        emoji.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        emoji.style.animationDelay = Math.random() * 10 + 's';
+        emoji.style.fontSize = (Math.random() * 20 + 20) + 'px';
+        container.appendChild(emoji);
+      }
+    }
+
+    // Sayfa yüklendiğinde emoji arka planını oluştur
+    window.addEventListener('load', function() {
+      createEmojiBackground();
+      const audio = document.getElementById('bgMusic');
+      audio.volume = 0.7;
+    });
+  </script>
+</body>
+</html>
+
